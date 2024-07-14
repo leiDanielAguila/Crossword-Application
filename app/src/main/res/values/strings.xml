@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CROSSWORD GAME</string>
+    <string name="play_game">Play Game</string>
+    <string name="how2play">How to Play</string>
+    <string name="Settings">Settings</string>
+    <string name="Feedback">Feedback</string>
+    <string name="resetGame">Reset Game</string>
+    <string name="terms_and_services">Terms &amp; Services</string>
+    <string name="Language">Language</string>
+    <string name="music">Music</string>
+    <string name="sound_effects">Sound Effects</string>
+
+
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+
+
+    <string name="history_category">History</string>
+    <string name="movies_category">Movies</string>
+</resources>
