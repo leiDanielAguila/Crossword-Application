@@ -208,7 +208,7 @@ fun GameLayout(
                         .fillMaxSize()
                         .align(Alignment.CenterHorizontally)
                 ) {
-                    items(100) {
+                    item {
                         Surface(
                             modifier = Modifier.size(width = 30.dp, height = 25.dp),
                             color = white
