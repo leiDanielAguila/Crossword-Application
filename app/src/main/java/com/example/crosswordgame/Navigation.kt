@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.crosswordgame.games.BackgroundMoviesImage
 import com.example.crosswordgame.games.MoviesScreen
 import com.example.crosswordgame.mainMenu.MainMenu
 import com.example.crosswordgame.mainMenu.SettingsOptions

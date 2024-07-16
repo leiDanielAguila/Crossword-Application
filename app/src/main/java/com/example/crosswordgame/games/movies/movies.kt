@@ -44,6 +44,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.crosswordgame.R
 import com.example.crosswordgame.Screen
+import com.example.crosswordgame.games.movies.MoviesGameTiles
 import com.example.crosswordgame.ui.theme.black
 import com.example.crosswordgame.ui.theme.brown
 import com.example.crosswordgame.ui.theme.darkBlue
@@ -188,45 +189,23 @@ fun GameLayout(
                     )
                 }
             }
-        } // COLUMN end bracket
+        } 
 
-        Column( // GAME TILES
+        Column(
             modifier = Modifier
                 .padding(top = 210.dp,)
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Surface(
-                modifier = Modifier.size(width = 250.dp, height = 260.dp),
-                color = Color.Transparent
-            ) {
-                LazyVerticalGrid(
-                    columns = GridCells.Fixed(8),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    horizontalArrangement = Arrangement.spacedBy(4.dp),
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .align(Alignment.CenterHorizontally)
-                ) {
-                    item {
-                        Surface(
-                            modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                            color = white
-                        ) {
-                            Row(
-                                modifier = Modifier.fillMaxSize(),
-                                horizontalArrangement = Arrangement.Center,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(text = "")
-                            }
-                        }
-                    }
-                }
-            }
+            MoviesGameTiles()
         }
-    } // BOX end bracket
-} // Composable end bracket
+    }
+}
+
+@Composable
+fun MoviesGameButtons(modifier: Modifier = Modifier) {
+    
+}
 
 
 @Composable
