@@ -220,7 +220,7 @@ fun GameLayout(
                             ) {
                                 Text(text = "")
                             }
-                        }
+                        }   
                     }
                 }
             }
