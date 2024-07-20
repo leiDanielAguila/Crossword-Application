@@ -49,7 +49,6 @@ fun SettingsOptions(
     navController: NavController,
     modifier: Modifier = Modifier,
 ) {
-    BackgroundImage()
     Column(
         modifier.padding(24.dp)
     ) {

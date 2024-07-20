@@ -47,7 +47,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.crosswordgame.R
 import com.example.crosswordgame.Screen
-import com.example.crosswordgame.mainMenu.BackgroundImage
 import com.example.crosswordgame.mainMenu.ReturnButton
 import com.example.crosswordgame.ui.theme.black
 import com.example.crosswordgame.ui.theme.brown
@@ -61,7 +60,7 @@ fun GameSelectionScreen(
     navController: NavController,
     modifier: Modifier = Modifier.fillMaxSize()
 ) {
-    BackgroundImage()
+
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(12.dp),
         modifier = Modifier.padding(21.dp)
