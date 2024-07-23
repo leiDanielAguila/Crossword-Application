@@ -1,10 +1,12 @@
 package com.example.crosswordgame.selectOptions
 
 import android.content.ClipData.Item
+import android.graphics.Movie
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -35,6 +37,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role.Companion.Button
@@ -58,26 +61,40 @@ import com.example.crosswordgame.ui.theme.yellow
 @Composable
 fun GameSelectionScreen(
     navController: NavController,
-    modifier: Modifier = Modifier.fillMaxSize()
+    modifier: Modifier = Modifier
 ) {
 
-    LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-        modifier = Modifier.padding(21.dp)
-    ) {
+    Box(modifier.fillMaxSize()) {
 
-        item {
-            Row {
-                GameSelectionReturnButton(navController = navController)
-                Image(
-                    painterResource(R.drawable.gamecategorymenu),
-                    contentDescription = "Game Categories",
-                )
+        // background image
+        Image(painterResource(
+            R.drawable.homepagebackground),
+            contentDescription = "Main Menu background",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.matchParentSize()
+        )
 
-            }
+        Row(
+            modifier = Modifier.padding(top = 42.dp)
+        ) {
+            GameSelectionReturnButton(navController = navController)
         }
-        item {
-            MoviesCard(navController = navController)
+
+        Column(
+            modifier = Modifier.fillMaxSize().padding(top = 124.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                modifier = Modifier.padding(21.dp)
+            ) {
+                item { MoviesCard(navController = navController) }
+                item { MoviesCard(navController = navController) }
+                item { MoviesCard(navController = navController) }
+                item { MoviesCard(navController = navController) }
+                item { MoviesCard(navController = navController) }
+                item { MoviesCard(navController = navController) }
+            }
         }
     }
 
@@ -89,7 +106,7 @@ fun GameSelectionReturnButton(
     navController: NavController
 ) {
     Surface(
-        modifier = modifier.padding(8.dp),
+        modifier = modifier.padding(12.dp),
         color = brown,
         shape = RoundedCornerShape(50.dp),
         border = BorderStroke(2.dp, color = black)
@@ -113,28 +130,25 @@ fun MoviesCard(
     modifier: Modifier = Modifier,
     navController: NavController
 ) {
-    OutlinedCard(
-        border = BorderStroke(1.dp, Color.Black),
-        onClick ={
-            navController.navigate(Screen.Movies.route)
-        },
-        colors = CardDefaults.cardColors(containerColor = lighterBrown),
-        modifier = Modifier
-            .size(width = 350.dp, height = 150.dp)
-    ) {
-        Text(
-            stringResource(R.string.movies_category),
-            fontFamily = FontFamily.Serif,
-            fontSize = 12.em,
-            modifier = Modifier
-                .padding(top = 36.dp)
-                .align(Alignment.CenterHorizontally)
-        )
+    Column {
+        OutlinedCard(
+            border = BorderStroke(3.dp, Color.Black),
+            onClick = { navController.navigate(Screen.Movies.route) },
+        ) {
+
+            Image(
+                painterResource(R.drawable.movie),
+                contentDescription = "movie card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .size(width = 290.dp, height = 190.dp)
+            )
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun HistoryCardPreview() {
+fun GameSelectionScreenPreview() {
     GameSelectionScreen(navController = rememberNavController())
 }

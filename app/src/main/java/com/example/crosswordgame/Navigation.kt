@@ -5,9 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.crosswordgame.games.MoviesScreen
-import com.example.crosswordgame.mainMenu.MainMenu
 import com.example.crosswordgame.mainMenu.MainMenuScreen
-import com.example.crosswordgame.mainMenu.SettingsOptions
+import com.example.crosswordgame.mainMenu.SettingsScreen
 import com.example.crosswordgame.selectOptions.GameSelectionScreen
 
 @Composable
@@ -18,7 +17,7 @@ fun Navigation() {
             MainMenuScreen(navController = navController)
         }
         composable (route = Screen.Settings.route) { 
-            SettingsOptions(navController = navController)
+            SettingsScreen(navController = navController)
         }
         composable(route = Screen.GameSelection.route) {
             GameSelectionScreen(navController = navController)

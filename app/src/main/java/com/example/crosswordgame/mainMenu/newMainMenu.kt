@@ -10,9 +10,18 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.AccountCircle
+import androidx.compose.material.icons.rounded.Info
+import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,7 +39,10 @@ import com.example.crosswordgame.Navigation
 import com.example.crosswordgame.R
 import com.example.crosswordgame.Screen
 import com.example.crosswordgame.ui.theme.CROSSWORDGAMETheme
+import com.example.crosswordgame.ui.theme.black
 import com.example.crosswordgame.ui.theme.brown
+import com.example.crosswordgame.ui.theme.lighterBrown
+import com.example.crosswordgame.ui.theme.white
 
 @Composable
 fun MainMenuScreen(
@@ -54,17 +66,26 @@ fun MainMenuScreen(
             Image(
                 painterResource(R.drawable.file),
                 contentDescription = "Main Menu logo",
-                modifier = Modifier.padding(top = 62.dp)
+                modifier = Modifier.padding(top = 62.dp).size(222.dp)
             )
         } // row #1 scope
 
         Column( // game buttons
-            modifier = Modifier.fillMaxSize().padding(top = 52.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 152.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             MainMenuButtons(navController = navController)
         } // column #1 scope
+
+        Column(
+            modifier = Modifier.fillMaxSize().padding(top = 24.dp),
+            horizontalAlignment = Alignment.End
+        ) {
+            SettingsAndSoundButton(navController = navController)
+        }
     }
 }
 
@@ -94,6 +115,7 @@ fun MainMenuButtons(
         ) {
             Text(
                 stringResource(R.string.play_game),
+                color = white,
                 fontSize = 36.sp
             )
         }
@@ -111,10 +133,11 @@ fun MainMenuButtons(
         ) {
             Text(
                 stringResource(R.string.how2play),
+                color = white,
                 fontSize = 24.sp
             )
         }
-        OutlinedButton( // settings button
+        OutlinedButton( // Language button
             onClick =  {
                 navController.navigate(Screen.Settings.route)
             },
@@ -129,7 +152,8 @@ fun MainMenuButtons(
             )
         ) {
             Text(
-                stringResource(R.string.Settings),
+                stringResource(R.string.Language),
+                color = white,
                 fontSize = 24.sp
             )
         }
@@ -147,8 +171,54 @@ fun MainMenuButtons(
         ) {
             Text(
                 stringResource(R.string.Feedback),
+                color = white,
                 fontSize = 24.sp
             )
+        }
+    }
+}
+
+@Composable
+fun SettingsAndSoundButton(
+    modifier: Modifier = Modifier,
+    navController: NavController
+) {
+    Column(
+        modifier.padding(12.dp)
+    ) {
+        Surface(
+            color = lighterBrown,
+            shape = RoundedCornerShape(50.dp),
+            border = BorderStroke(2.dp, color = black)
+        ) {
+            IconButton(
+                onClick = { navController.navigate(Screen.Settings.route)},
+                modifier = Modifier.size(50.dp)
+            ) {
+                Icon(
+                    Icons.Rounded.Settings,
+                    contentDescription = null,
+                    modifier = Modifier.size(40.dp),
+                    )
+            }
+        }
+        Spacer(modifier = Modifier.padding(4.dp))
+        Surface(
+            color = lighterBrown,
+            shape = RoundedCornerShape(50.dp),
+            border = BorderStroke(2.dp, color = black)
+        ) {
+            IconButton(
+                onClick = { },
+                modifier = Modifier.size(50.dp)
+            ) {
+                Icon(
+                    painterResource(id = R.drawable.baseline_volume_up_24),
+                    contentDescription = null,
+                    modifier = Modifier.size(40.dp),
+
+                    )
+            }
         }
     }
 }

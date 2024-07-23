@@ -103,8 +103,9 @@ fun GameLayout(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(top = 44.dp)
                 .padding(12.dp),
-            verticalArrangement = Arrangement.spacedBy(5.dp),
+            verticalArrangement = Arrangement.spacedBy(3.dp),
             horizontalAlignment = Alignment.End,
         ) {
 
@@ -112,8 +113,7 @@ fun GameLayout(
                 // background changer button
                 color = white,
                 shape = RoundedCornerShape(50.dp),
-                border = BorderStroke(2.dp, color = black),
-
+                border = BorderStroke(2.dp, color = black)
                 ) {
                 IconButton(
                     onClick = {
@@ -123,18 +123,17 @@ fun GameLayout(
                             backgroundImage++
                         }
                     },
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(40.dp)
                 ) {
                     Icon(
                         Icons.Rounded.Refresh,
                         contentDescription = null,
-                        modifier = Modifier.size(20.dp)
+                        modifier = Modifier.size(35.dp)
                     )
                 }
             }
 
             Surface(
-
                 color = white,
                 shape = RoundedCornerShape(30.dp),
                 border = BorderStroke(2.dp, color = black)
@@ -143,12 +142,12 @@ fun GameLayout(
                     onClick = {
                         navController.navigate(Screen.GameSelection.route)
                     },
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(40.dp)
                 ) {
                     Icon(
                         Icons.Rounded.ExitToApp,
                         contentDescription = null,
-                        modifier = Modifier.size(20.dp)
+                        modifier = Modifier.size(30.dp)
                     )
                 }
 
@@ -162,12 +161,12 @@ fun GameLayout(
             ) {
                 IconButton(
                     onClick = { },
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(40.dp)
                 ) {
                     Icon(
-                        Icons.Rounded.Info,
+                        painterResource(R.drawable.baseline_lightbulb_24),
                         contentDescription = null,
-                        modifier = Modifier.size(20.dp)
+                        modifier = Modifier.size(35.dp)
                     )
                 }
             }
@@ -180,12 +179,12 @@ fun GameLayout(
             ) {
                 IconButton(
                     onClick = { },
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(40.dp)
                 ) {
                     Icon(
-                        Icons.Rounded.Settings,
+                        painterResource(R.drawable.baseline_volume_up_24),
                         contentDescription = null,
-                        modifier = Modifier.size(20.dp)
+                        modifier = Modifier.size(35.dp)
                     )
                 }
             }
@@ -193,42 +192,11 @@ fun GameLayout(
 
         Column(
             modifier = Modifier
-                .padding(top = 210.dp,)
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-<<<<<<< HEAD:app/src/main/java/com/example/crosswordgame/games/Movies.kt
-            Surface(
-                modifier = Modifier.size(width = 250.dp, height = 260.dp),
-                color = Color.Transparent
-            ) {
-                LazyVerticalGrid(
-                    columns = GridCells.Fixed(8),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    horizontalArrangement = Arrangement.spacedBy(4.dp),
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .align(Alignment.CenterHorizontally)
-                ) {
-                    items(100) {
-                        Surface(
-                            modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                            color = white
-                        ) {
-                            Row(
-                                modifier = Modifier.fillMaxSize(),
-                                horizontalArrangement = Arrangement.Center,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(text = "")
-                            }
-                        }   
-                    }
-                }
-            }
-=======
             MoviesGameTiles()
->>>>>>> gametilesfix:app/src/main/java/com/example/crosswordgame/games/movies/movies.kt
         }
     }
 }

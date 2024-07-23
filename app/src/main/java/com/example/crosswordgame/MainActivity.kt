@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.example.crosswordgame.mainMenu.MainMenu
 import com.example.crosswordgame.ui.theme.CROSSWORDGAMETheme
 
 class MainActivity : ComponentActivity() {
