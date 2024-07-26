@@ -25,5 +25,8 @@ fun Navigation() {
         composable(route = Screen.Movies.route) {
             MoviesScreen(navController = navController)
         }
+        composable(route = Screen.FeedbackOne.route) {
+
+        }
     }
 }
