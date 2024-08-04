@@ -26,4 +26,7 @@
 
     <string name="history_category">History</string>
     <string name="movies_category">Movies</string>
+
+    <string name="feedbackQuestion1">Have you encountered any bugs? If so, please specify them below.</string>
+    <string name="feedbackQuestion2">Do you have any suggestions for the game? If so, please specify them below.</string>
 </resources>

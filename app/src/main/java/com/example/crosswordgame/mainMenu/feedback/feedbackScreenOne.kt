@@ -70,7 +70,6 @@ fun FeedbackScreen(modifier: Modifier = Modifier, navController: NavController) 
         ) {
             GiveFeedbackOne(navController = navController)
         }
-
     }
 }
 

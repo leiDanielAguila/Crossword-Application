@@ -8,6 +8,7 @@ import com.example.crosswordgame.games.MoviesScreen
 import com.example.crosswordgame.mainMenu.MainMenuScreen
 import com.example.crosswordgame.mainMenu.SettingsScreen
 import com.example.crosswordgame.mainMenu.feedback.FeedbackScreen
+import com.example.crosswordgame.mainMenu.feedback.FeedbackScreenThree
 import com.example.crosswordgame.mainMenu.feedback.FeedbackScreenTwo
 import com.example.crosswordgame.selectOptions.GameSelectionScreen
 
@@ -23,5 +24,6 @@ fun Navigation() {
         // feedback screens
         composable(route = Screen.FeedbackOne.route) { FeedbackScreen(navController = navController) }
         composable(route = Screen.FeedbackTwo.route) { FeedbackScreenTwo(navController = navController) }
+        composable(route = Screen.FeedbackThree.route) { FeedbackScreenThree(navController = navController) }
     }
 }
