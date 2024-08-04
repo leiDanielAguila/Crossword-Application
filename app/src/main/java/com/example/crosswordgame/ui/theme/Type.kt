@@ -38,3 +38,8 @@ val Typography = Typography(
 val MaragsaFont = FontFamily(
     Font(R.font.marags_font, FontWeight.Normal)
 )
+
+val AliceFont = FontFamily(
+    Font(R.font.alice_regular, FontWeight.Normal),
+    Font(R.font.alice_regular, FontWeight.Bold)
+)

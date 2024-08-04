@@ -29,4 +29,6 @@
 
     <string name="feedbackQuestion1">Have you encountered any bugs? If so, please specify them below.</string>
     <string name="feedbackQuestion2">Do you have any suggestions for the game? If so, please specify them below.</string>
+    <string name="feedbackTyMessageOne">Thank you for taking the time to share your positive experience with us!</string>
+    <string name="feedbackTyMessageTwo">We will use your feedback to improve our game in the future.</string>
 </resources>
