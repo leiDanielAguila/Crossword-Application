@@ -7,26 +7,21 @@ import androidx.navigation.compose.rememberNavController
 import com.example.crosswordgame.games.MoviesScreen
 import com.example.crosswordgame.mainMenu.MainMenuScreen
 import com.example.crosswordgame.mainMenu.SettingsScreen
+import com.example.crosswordgame.mainMenu.feedback.FeedbackScreen
+import com.example.crosswordgame.mainMenu.feedback.FeedbackScreenTwo
 import com.example.crosswordgame.selectOptions.GameSelectionScreen
 
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.MainMenu.route) {
-        composable (route = Screen.MainMenu.route) {
-            MainMenuScreen(navController = navController)
-        }
-        composable (route = Screen.Settings.route) { 
-            SettingsScreen(navController = navController)
-        }
-        composable(route = Screen.GameSelection.route) {
-            GameSelectionScreen(navController = navController)
-        }
-        composable(route = Screen.Movies.route) {
-            MoviesScreen(navController = navController)
-        }
-        composable(route = Screen.FeedbackOne.route) {
+        composable (route = Screen.MainMenu.route) { MainMenuScreen(navController = navController) }
+        composable (route = Screen.Settings.route) { SettingsScreen(navController = navController) }
+        composable(route = Screen.GameSelection.route) { GameSelectionScreen(navController = navController) }
+        composable(route = Screen.Movies.route) { MoviesScreen(navController = navController) }
 
-        }
+        // feedback screens
+        composable(route = Screen.FeedbackOne.route) { FeedbackScreen(navController = navController) }
+        composable(route = Screen.FeedbackTwo.route) { FeedbackScreenTwo(navController = navController) }
     }
 }

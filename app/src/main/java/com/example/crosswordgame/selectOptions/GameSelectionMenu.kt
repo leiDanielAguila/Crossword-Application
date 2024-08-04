@@ -68,7 +68,7 @@ fun GameSelectionScreen(
 
         // background image
         Image(painterResource(
-            R.drawable.homepagebackground),
+            R.drawable.appbackgroundimg),
             contentDescription = "Main Menu background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
@@ -81,18 +81,14 @@ fun GameSelectionScreen(
         }
 
         Column(
-            modifier = Modifier.fillMaxSize().padding(top = 124.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 124.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.padding(21.dp)
+                verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                item { MoviesCard(navController = navController) }
-                item { MoviesCard(navController = navController) }
-                item { MoviesCard(navController = navController) }
-                item { MoviesCard(navController = navController) }
-                item { MoviesCard(navController = navController) }
                 item { MoviesCard(navController = navController) }
             }
         }
@@ -130,20 +126,17 @@ fun MoviesCard(
     modifier: Modifier = Modifier,
     navController: NavController
 ) {
-    Column {
-        OutlinedCard(
-            border = BorderStroke(3.dp, Color.Black),
-            onClick = { navController.navigate(Screen.Movies.route) },
-        ) {
 
-            Image(
-                painterResource(R.drawable.movie),
-                contentDescription = "movie card",
-                contentScale = ContentScale.FillBounds,
-                modifier = Modifier
-                    .size(width = 290.dp, height = 190.dp)
-            )
-        }
+    Card(
+        onClick = { navController.navigate(Screen.Movies.route) },
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent)
+    ) {
+        Image(
+            painterResource(R.drawable.mt),
+            contentDescription = "movie card",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.size(width = 268.dp, height = 181.dp)
+        )
     }
 }
 

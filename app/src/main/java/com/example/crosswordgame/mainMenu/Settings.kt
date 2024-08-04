@@ -47,7 +47,7 @@ fun SettingsScreen(
         // background image
         Image(
             painterResource(
-            R.drawable.homepagebackground),
+            R.drawable.appbackgroundimg),
             contentDescription = "Main Menu background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()

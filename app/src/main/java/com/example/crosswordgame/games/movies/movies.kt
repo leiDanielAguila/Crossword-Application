@@ -79,10 +79,10 @@ fun GameLayout(
             modifier = Modifier.padding(top = 100.dp)
         ) {
             Image(
-                painterResource(R.drawable.moviescoreboard),
+                painterResource(R.drawable.moviescore),
                 contentDescription = "Movies Scoreboard",
-                modifier = Modifier
-                    .size(110.dp)
+                modifier = Modifier.padding(start = 12.dp)
+
             )
         }
 
@@ -93,10 +93,9 @@ fun GameLayout(
         ) {
 
             Image(
-                painterResource(R.drawable.movietitleboard),
+                painterResource(R.drawable.movieticketheader),
                 contentDescription = "Movies Scoreboard",
-                modifier = Modifier
-                    .size(190.dp),
+                modifier = Modifier.padding(top = 12.dp)
             )
         }
 

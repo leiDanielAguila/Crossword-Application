@@ -24,6 +24,11 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -39,6 +44,7 @@ import com.example.crosswordgame.Navigation
 import com.example.crosswordgame.R
 import com.example.crosswordgame.Screen
 import com.example.crosswordgame.ui.theme.CROSSWORDGAMETheme
+import com.example.crosswordgame.ui.theme.MaragsaFont
 import com.example.crosswordgame.ui.theme.black
 import com.example.crosswordgame.ui.theme.brown
 import com.example.crosswordgame.ui.theme.lighterBrown
@@ -53,7 +59,7 @@ fun MainMenuScreen(
 
         // background image
         Image(painterResource(
-            R.drawable.homepagebackground),
+            R.drawable.appbackgroundimg),
             contentDescription = "Main Menu background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
@@ -66,7 +72,9 @@ fun MainMenuScreen(
             Image(
                 painterResource(R.drawable.file),
                 contentDescription = "Main Menu logo",
-                modifier = Modifier.padding(top = 62.dp).size(222.dp)
+                modifier = Modifier
+                    .padding(top = 62.dp)
+                    .size(222.dp)
             )
         } // row #1 scope
 
@@ -81,7 +89,9 @@ fun MainMenuScreen(
         } // column #1 scope
 
         Column(
-            modifier = Modifier.fillMaxSize().padding(top = 24.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 24.dp),
             horizontalAlignment = Alignment.End
         ) {
             SettingsAndSoundButton(navController = navController)
@@ -116,7 +126,8 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.play_game),
                 color = white,
-                fontSize = 36.sp
+                fontSize = 36.sp,
+                fontFamily = MaragsaFont
             )
         }
         OutlinedButton( // game instructions button
@@ -134,13 +145,12 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.how2play),
                 color = white,
-                fontSize = 24.sp
+                fontSize = 24.sp,
+                fontFamily = MaragsaFont
             )
         }
         OutlinedButton( // Language button
-            onClick =  {
-                navController.navigate(Screen.Settings.route)
-            },
+            onClick =  {  },
             colors = ButtonDefaults.buttonColors(containerColor = brown),
             modifier = Modifier
                 .padding(4.dp)
@@ -154,11 +164,12 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.Language),
                 color = white,
-                fontSize = 24.sp
+                fontSize = 24.sp,
+                fontFamily = MaragsaFont
             )
         }
         OutlinedButton( // Feedback button
-            onClick = {  },
+            onClick = { navController.navigate(Screen.FeedbackOne.route) },
             colors = ButtonDefaults.buttonColors(containerColor = brown),
             modifier = Modifier
                 .padding(4.dp)
@@ -172,7 +183,8 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.Feedback),
                 color = white,
-                fontSize = 24.sp
+                fontSize = 24.sp,
+                fontFamily = MaragsaFont
             )
         }
     }
@@ -183,6 +195,16 @@ fun SettingsAndSoundButton(
     modifier: Modifier = Modifier,
     navController: NavController
 ) {
+
+    var onSoundClick by remember { mutableStateOf(true) }
+
+    val soundIcon = when (onSoundClick) {
+        true ->  painterResource(id = R.drawable.baseline_volume_up_24)
+        else -> painterResource(id = R.drawable.baseline_volume_off_24)
+    }
+
+
+
     Column(
         modifier.padding(12.dp)
     ) {
@@ -209,14 +231,13 @@ fun SettingsAndSoundButton(
             border = BorderStroke(2.dp, color = black)
         ) {
             IconButton(
-                onClick = { },
+                onClick = { onSoundClick = !onSoundClick},
                 modifier = Modifier.size(50.dp)
             ) {
                 Icon(
-                    painterResource(id = R.drawable.baseline_volume_up_24),
+                    painter = soundIcon,
                     contentDescription = null,
                     modifier = Modifier.size(40.dp),
-
                     )
             }
         }
