@@ -219,7 +219,7 @@ fun NextAndReturnButton(navController: NavController) {
                 .padding(4.dp)
         ) {
             IconButton(
-                onClick = { navController.navigate(Screen.FeedbackTwo.route) },
+                onClick = { navController.navigate(Screen.FeedbackThree.route) },
             ) {
                 Icon(
                     Icons.Rounded.ArrowForward,

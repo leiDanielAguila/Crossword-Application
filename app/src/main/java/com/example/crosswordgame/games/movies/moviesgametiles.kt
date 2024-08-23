@@ -3,6 +3,7 @@ package com.example.crosswordgame.games.movies
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -12,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.crosswordgame.ui.theme.white
 
@@ -20,19 +22,22 @@ fun MoviesGameTiles() {
     Surface(
         modifier = Modifier.size(width = 350.dp, height = 290.dp),
         color = Color.Transparent
+
     ) {
         LazyVerticalGrid(
-            columns = GridCells.Fixed(12),
-            verticalArrangement = Arrangement.spacedBy(4.dp),
-            horizontalArrangement = Arrangement.spacedBy(4.dp),
+            columns = GridCells.Fixed(8),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
             modifier = Modifier
                 .fillMaxSize()
-
+                .padding(16.dp)
         ) {
-            items(2){}
-            item {// LETTER F
+
+            items(2) {} // start of the first row
+
+            item {// LETTER M
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -43,11 +48,12 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
-            items(9){}
-            items(11) { //FORREST GUMP
+            } // items count
+
+            items(3) {}
+            item {// LETTER M
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -58,12 +64,15 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
+            } // items count
             item{}
-            items(2){}
-            item {// LETTER O
+            // first row finish
+
+
+            items(2) {} // second row start
+            item {// LETTER U
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -74,11 +83,10 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
-            items(3){}
-            item {// LETTER I
+            } // items count
+            item {// LETTER P
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -89,12 +97,14 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
-            items(5){}
-            items(2){}
-            item {
+            } // items count
+
+            items(2) {} // end of 2nd row
+
+
+            item {// LETTER M
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -105,88 +115,13 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
-            items(3){}
-            item {
-                Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                    color = white
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(text = "")
-                    }
-                }
-            }
-            items(5){}
-            items(2){}
-            item {
-                Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                    color = white
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(text = "")
-                    }
-                }
-            }
-            items(3){}
-            items(6) {
-                Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                    color = white
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(text = "")
-                    }
-                }
-            }
-            items(2){}
-            item {
-                Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                    color = white
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(text = "")
-                    }
-                }
-            }
-            items(3){}
-            item {
-                Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
-                    color = white
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(text = "")
-                    }
-                }
-            }
-            items(5){}
+            } // items count
+
             item{}
-            items(8) {
+            // start of 3rd row
+            item {// LETTER C
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -197,12 +132,186 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
+            } // items count
+
+            item{}
+
+            item {// LETTER L
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+
+            items (3) {}
+
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+
+            item{}
+            // end of 3rd row
+            // start of 4th row
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+
+            item{}
+
+            // end of 4th row
+
+            // start of 5th row
+
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+
+            item{}
+
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+
             items(3){}
-            items(6){}
-            item {
+            item {// LETTER M
                 Surface(
-                    modifier = Modifier.size(width = 30.dp, height = 25.dp),
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
                     color = white
                 ) {
                     Row(
@@ -213,7 +322,30 @@ fun MoviesGameTiles() {
                         Text(text = "")
                     }
                 }
-            }
-        }
-    }
+            } // items count
+            item{}
+            // end of 5th row
+            item {// LETTER M
+                Surface(
+                    modifier = Modifier.size(width = 40.dp, height = 35.dp),
+                    color = white
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "")
+                    }
+                }
+            } // items count
+
+        } // lazy vertical grid scope
+    } // surface scope
+} // composable scope
+
+@Preview(showBackground = true)
+@Composable
+fun GameTilesPreview() {
+    MoviesGameTiles()
 }

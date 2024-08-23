@@ -1,5 +1,6 @@
 package com.example.crosswordgame.mainMenu.feedback
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -11,7 +12,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -29,7 +32,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.crosswordgame.R
+import com.example.crosswordgame.Screen
 import com.example.crosswordgame.ui.theme.AliceFont
+import com.example.crosswordgame.ui.theme.black
+import com.example.crosswordgame.ui.theme.browner
+import com.example.crosswordgame.ui.theme.darkBlue
 import com.example.crosswordgame.ui.theme.darkerBrown
 import com.example.crosswordgame.ui.theme.darkestBrown
 import com.example.crosswordgame.ui.theme.toneBrown
@@ -49,13 +56,13 @@ fun FeedbackScreenThree(modifier: Modifier = Modifier, navController: NavControl
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            ScreenThree()
+            ScreenThree(navController = navController)
         }
     }
 }
 
 @Composable
-fun ScreenThree(modifier: Modifier = Modifier) {
+fun ScreenThree(navController: NavController) {
     ElevatedCard(
         colors = CardDefaults.cardColors(containerColor = darkestBrown),
         shape = RoundedCornerShape(20.dp),
@@ -78,16 +85,39 @@ fun ScreenThree(modifier: Modifier = Modifier) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.SpaceEvenly,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                 ) {
                     Text(
                         stringResource(id = R.string.feedbackTyMessageOne),
                         color = Color.Black,
-                        fontFamily = AliceFont,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         modifier = Modifier.padding(12.dp),
-                        fontSize = 20.sp
+                        fontSize = 22.sp
                     )
+                    Text(
+                        stringResource(id = R.string.feedbackTyMessageTwo),
+                        color = Color.Black,
+                        fontFamily = AliceFont,
+                        fontWeight = FontWeight.Light,
+                        fontSize = 18.sp,
+                        modifier = Modifier.padding(16.dp),
+                    )
+
+                    ElevatedButton(
+                        onClick = { navController.navigate(Screen.MainMenu.route) },
+                        modifier = Modifier
+                            .size(width = 140.dp, height = 50.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = browner),
+                        border = BorderStroke(2.dp, black)
+                    ) {
+                        Text(
+                            stringResource(R.string.backToHome),
+                            fontSize = 14.sp,
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                 }
             }
         }

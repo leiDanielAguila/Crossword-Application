@@ -70,11 +70,11 @@ fun MainMenuScreen(
             horizontalArrangement = Arrangement.Center
         ){
             Image(
-                painterResource(R.drawable.file),
+                painterResource(R.drawable.logo),
                 contentDescription = "Main Menu logo",
                 modifier = Modifier
-                    .padding(top = 62.dp)
-                    .size(222.dp)
+                    .padding(top = 30.dp)
+                    .size(322.dp)
             )
         } // row #1 scope
 
@@ -116,8 +116,8 @@ fun MainMenuButtons(
             colors = ButtonDefaults.buttonColors(containerColor = brown),
             modifier = Modifier
                 .padding(4.dp)
-                .height(70.dp)
-                .width(240.dp),
+                .height(100.dp)
+                .width(290.dp),
             border = BorderStroke(
                 width = 3.dp,
                 color = Color.Black
@@ -126,7 +126,7 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.play_game),
                 color = white,
-                fontSize = 36.sp,
+                fontSize = 52.sp,
                 fontFamily = MaragsaFont
             )
         }
@@ -135,8 +135,8 @@ fun MainMenuButtons(
             colors = ButtonDefaults.buttonColors(containerColor = brown),
             modifier = Modifier
                 .padding(4.dp)
-                .height(50.dp)
-                .width(200.dp),
+                .height(70.dp)
+                .width(240.dp),
             border = BorderStroke(
                 width = 3.dp,
                 color = Color.Black
@@ -145,26 +145,7 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.how2play),
                 color = white,
-                fontSize = 24.sp,
-                fontFamily = MaragsaFont
-            )
-        }
-        OutlinedButton( // Language button
-            onClick =  {  },
-            colors = ButtonDefaults.buttonColors(containerColor = brown),
-            modifier = Modifier
-                .padding(4.dp)
-                .height(50.dp)
-                .width(200.dp),
-            border = BorderStroke(
-                width = 3.dp,
-                color = Color.Black
-            )
-        ) {
-            Text(
-                stringResource(R.string.Language),
-                color = white,
-                fontSize = 24.sp,
+                fontSize = 34.sp,
                 fontFamily = MaragsaFont
             )
         }
@@ -173,8 +154,8 @@ fun MainMenuButtons(
             colors = ButtonDefaults.buttonColors(containerColor = brown),
             modifier = Modifier
                 .padding(4.dp)
-                .height(50.dp)
-                .width(200.dp),
+                .height(70.dp)
+                .width(240.dp),
             border = BorderStroke(
                 width = 3.dp,
                 color = Color.Black
@@ -183,7 +164,7 @@ fun MainMenuButtons(
             Text(
                 stringResource(R.string.Feedback),
                 color = white,
-                fontSize = 24.sp,
+                fontSize = 34.sp,
                 fontFamily = MaragsaFont
             )
         }
